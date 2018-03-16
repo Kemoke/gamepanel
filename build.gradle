@@ -31,6 +31,8 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-websocket'
     compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
     compile 'javax.servlet:jstl'
+    compile 'org.webjars:jquery:3.3.1-1'
+    compile 'org.webjars:bootstrap:4.0.0-2'
     runtime 'mysql:mysql-connector-java'
     compileOnly 'org.projectlombok:lombok'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
