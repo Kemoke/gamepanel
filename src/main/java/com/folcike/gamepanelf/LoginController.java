@@ -1,5 +1,6 @@
 package com.folcike.gamepanelf;
 
+import com.folcike.gamepanelf.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ public class LoginController {
     @GetMapping("/login")
     public String loginForm(ModelMap map){
         map.put("test", "tewst");
-        return "index";
+        map.put("user", new User());
+        return "login";
     }
 }

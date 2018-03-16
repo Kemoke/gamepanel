@@ -2,6 +2,7 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html lang="en">
 <head>
@@ -16,7 +17,12 @@
 <div class="container">
     <div class="card">
         <h1 class="text-center">WILKOMEN</h1>
-        <form action="<c:url value="/auth/login"/>"></form>
+        <%--@elvariable id="user" type="com.folcike.gamepanelf.model.User"--%>
+        <form:form action="/auth/login" modelAttribute="user">
+            <form:label path="username">Username:</form:label>
+            <form:input path="username" cssClass="form-control"/>
+            <form:errors path="username" cssClass="error"/>
+        </form:form>
     </div>
 </div>
 

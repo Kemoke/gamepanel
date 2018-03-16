@@ -1,12 +1,13 @@
 package com.folcike.gamepanelf.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class User {
 
