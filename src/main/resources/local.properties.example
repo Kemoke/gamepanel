@@ -1,0 +1,6 @@
+Create file local.properties with this data
+
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.username=username
+spring.datasource.password=password
+spring.datasource.url=jdbc:mysql://localhost:3306/databasename
