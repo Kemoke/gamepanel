@@ -30,6 +30,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-websocket'
     compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    compile 'javax.xml.bind:jaxb-api:2.3.0'
     compile 'javax.servlet:jstl'
     compile 'org.webjars:jquery:3.3.1-1'
     compile 'org.webjars:bootstrap:4.0.0-2'
