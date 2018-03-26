@@ -50,44 +50,37 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/gamepanel">Game Panel </a>
+          </li>
+          <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servers</a>
+                      <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">S1</a>
+                        <a class="dropdown-item" href="#">S2</a>
+                        <a class="dropdown-item" href="#">S3</a>
+                      </div>
+                    </li>
           <li class="nav-item">
             <a class="nav-link" href="/help">Help</a>
           </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-primary my-mx-2 my-sm-0 px-py-3" type="login" >Log In</button>
-          <button class="btn btn-outline-light my-mx-2 my-sm-0 " type="signin" >Sign In</button>
-
+          <p>Welcome ${username}</p>
         </form>
       </div>
     </nav>
 
     <main role="main" class="container">
 
-
-
-       <h1>Login</h1>
-       <form name='f' action="login" method='POST'>
-          <table>
-             <tr>
-                <td>User:</td>
-                <td><input type='text' name='username' value=''></td>
-             </tr>
-             <tr>
-                <td>Password:</td>
-                <td><input type='password' name='password' /></td>
-             </tr>
-             <tr>
-                <td><input name="submit" type="submit" value="submit" /></td>
-             </tr>
-          </table>
-      </form>
-
-
+      <div class="starter-template">
+        <h1 style="color:#ffffff" >Bootstrap starter template</h1>
+        <p class="lead" style="color:#ffffff">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
 
     </main><!-- /.container -->
 
