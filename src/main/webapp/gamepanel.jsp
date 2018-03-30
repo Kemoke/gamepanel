@@ -42,7 +42,7 @@
 
 
     <nav class="navbar navbar-expand-md fixed-top" style="background: rgba(0, 0, 0, 0.5)">
-        <img style="-webkit-user-select: none; max-width:80px" src="https://tmpfilecdn.freelogodesign.org/9c18431d-0196-4138-80c6-1e36bcb576b2.png">
+        <img src="logo.png"/>
         <a class="navbar-brand" href="#">XAM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
