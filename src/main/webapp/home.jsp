@@ -3,7 +3,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -42,7 +41,7 @@
 
 
     <nav class="navbar navbar-expand-md fixed-top" style="background: rgba(0, 0, 0, 0.5)">
-        <img style="-webkit-user-select: none; max-width:80px" src="https://tmpfilecdn.freelogodesign.org/9c18431d-0196-4138-80c6-1e36bcb576b2.png">
+        <img src="logo.png"/>
         <a class="navbar-brand" href="#">XAM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,6 +52,17 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gamepanel">Game Panel </a>
+          </li>
+          <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servers</a>
+                      <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">S1</a>
+                        <a class="dropdown-item" href="#">S2</a>
+                        <a class="dropdown-item" href="#">S3</a>
+                      </div>
+                    </li>
           <li class="nav-item">
             <a class="nav-link" href="/help">Help</a>
           </li>
@@ -68,26 +78,10 @@
 
     <main role="main" class="container">
 
-
-
-       <h1>Login</h1>
-       <form name='f' action="login" method='POST'>
-          <table>
-             <tr>
-                <td>User:</td>
-                <td><input type='text' name='username' value=''></td>
-             </tr>
-             <tr>
-                <td>Password:</td>
-                <td><input type='password' name='password' /></td>
-             </tr>
-             <tr>
-                <td><input name="submit" type="submit" value="submit" /></td>
-             </tr>
-          </table>
-      </form>
-
-
+      <div class="starter-template">
+        <h1 style="color:#ffffff" >Bootstrap starter template</h1>
+        <p class="lead" style="color:#ffffff">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
 
     </main><!-- /.container -->
 
