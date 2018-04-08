@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -21,13 +22,22 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private JdbcTemplate dataSource;
+
     @Autowired
-    JdbcTemplate dataSource;
+    SecurityConfig(JdbcTemplate dataSource){
+        this.dataSource = dataSource;
+    }
+
+    @Bean
+    BCryptPasswordEncoder getPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 
-        auth.jdbcAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance()).dataSource(dataSource.getDataSource())
+        auth.jdbcAuthentication().passwordEncoder(getPasswordEncoder()).dataSource(dataSource.getDataSource())
                 .usersByUsernameQuery(
                         "select username,password, 1 as enabled from user where username=?")
                 .authoritiesByUsernameQuery(
