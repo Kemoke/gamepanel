@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
 
-    @RequestMapping("")
+    @GetMapping("/")
     public String home(Model model, RedirectAttributes redirect)
     {
         return "home";
     }
-    @RequestMapping(value = "/loginxxx",method = RequestMethod.GET)
+
+    @GetMapping("/loginxxx")
     public String login(Model model, RedirectAttributes redirect)
     {
 
