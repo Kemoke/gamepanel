@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/")
 public class HomeController {
 
-    @RequestMapping("")
+    @RequestMapping("/")
     public String home(Model model, RedirectAttributes redirect)
     {
         return "home";
