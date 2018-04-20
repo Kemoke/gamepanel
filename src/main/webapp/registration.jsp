@@ -12,68 +12,37 @@
 
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/registration.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<style>
-*{color: #fff;}
-body{
-    background-image: url("/img/gaming.jpg");
-    background-size:cover;
-
-}
-.form-group2{
-    padding:10px 50px;
-    margin-top:10vh;
-    background-color: rgba(0,0,0,0.5);
-    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
-    -moz-box-shadow:-1px 4px 26px 11px rgba(0,0,0,0.75);
-    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
-}
-
-.form-group{
-    padding:0px 100px;
-}
-
-h1{
-    padding:5px;
-}
-
-.form-check{
-    padding:5px;
-}
-
-
-</style>
-   </head>
+        <link rel="stylesheet" href="/css/registration.css"></head>
 <body>
 <form>
 <div class="form-group">
 
   <div class="form-group2">
   <h1>Registration Form</h1>
-    <form>
+    <form:form method="POST" action="" modelAttribute="user">
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="firstname">First Name</label>
-          <input type="text" class="form-control" placeholder="First name" id="firstname">
+          <form:label path="firstname">First Name</label>
+          <form:input type="text" class="form-control" path="firstname"/>
         </div>
         <div class="form-group col-md-6">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" placeholder="Last name" id="lastname">
+            <form:label path="lastname">Last Name</label>
+            <form:input type="text" class="form-control" placeholder="Last name" path="lastname"/>
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <form:label path="email">Email address</label>
+            <form:input type="email" class="form-control" path="email" aria-describedby="emailHelp" placeholder="Enter email"/>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group col-md-6">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-user"></span>
             </span>
-            <label for="lastname">User Name</label>
-            <input type="text" class="form-control" placeholder="User name" id="username">
+            <form:label path="username">User Name</label>
+            <form:input type="text" class="form-control" placeholder="User name" path="username"/>
         </div>
       </div>
       <div class="row">
@@ -81,8 +50,8 @@ h1{
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-lock"></span>
             </span>
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <form:label for="password">Password</label>
+            <form:input type="password" class="form-control" path="password" placeholder="Password"/>
         </div>
         <div class="form-group col-md-6">
             <label for="validationServer01">Confirm Password</label>
