@@ -23,7 +23,6 @@ public class HomeController {
     @RequestMapping(value = "/loginxxx",method = RequestMethod.GET)
     public String login(Model model, RedirectAttributes redirect)
     {
-
         return "login";
     }
 }
