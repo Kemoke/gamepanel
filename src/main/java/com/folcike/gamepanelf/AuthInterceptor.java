@@ -15,7 +15,7 @@ import java.io.IOException;
 public class AuthInterceptor implements HandlerInterceptor {
 
     private static String[] excludedUrls = new String[]{
-            "login", "registration", "webjars", "css", "img", "error"
+            "/login/", "/registration/", "/webjars*", "/css*", "/img*", "/error", "/"
     };
     private final HttpSession session;
 
@@ -35,13 +35,13 @@ public class AuthInterceptor implements HandlerInterceptor {
         Object user = session.getAttribute("user");
         if (user != null){
             if (path.contains("login") || path.contains("registration")){
-                response.sendRedirect("/");
+                response.sendRedirect("/panel");
                 return false;
             }
             return true;
         }
         for (String excludedUrl : excludedUrls) {
-            if (path.contains(excludedUrl))
+            if ((path.charAt(path.length()-1) == '*' && path.startsWith(excludedUrl.substring(0, path.length()-2))) || path.equals(excludedUrl))
                 return true;
         }
         response.sendRedirect("/login/");
