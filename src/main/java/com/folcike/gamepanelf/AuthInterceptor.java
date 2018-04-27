@@ -41,7 +41,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
         for (String excludedUrl : excludedUrls) {
-            if ((path.charAt(path.length()-1) == '*' && path.startsWith(excludedUrl.substring(0, path.length()-2))) || path.equals(excludedUrl))
+            if ((excludedUrl.charAt(excludedUrl.length()-1) == '*' && path.startsWith(excludedUrl.substring(0, excludedUrl.length()-2))) || path.equals(excludedUrl))
                 return true;
         }
         response.sendRedirect("/login/");
