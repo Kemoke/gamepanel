@@ -31,6 +31,8 @@ public class Game {
 
     private String stopScriptPath;
 
+    private String scriptRootPath;
+
     private String configRootPath;
     
     private String configFileName;
