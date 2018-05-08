@@ -33,7 +33,7 @@ public class SSHService {
             sshClient.newSCPFileTransfer().upload(game.getInstallScriptPath(), getHomePath(machine));
             Session session = sshClient.startSession();
             session.exec(String.format("chmod +x %s", getHomePath(machine) + installScript.getName())).join();
-            Session.Command command = session.exec(runInBash(getHomePath(machine) + installScript.getName()));
+            Session.Command command = session.exec(runInBash(getHomePath(machine) + installScript.getName() + getInstallParams(server)));
             command.join();
             String response = IOUtils.readFully(command.getInputStream()).toString();
             if (!response.equals("ok")) {
@@ -123,6 +123,14 @@ public class SSHService {
         }
     }
 
+    public String readConfigFile(Server server) throws IOException {
+        return getFileContent(server, getConfigFilePath(server));
+    }
+
+    public void writeConfigFile(Server server, String data) throws IOException {
+        writeToFile(server, getConfigFilePath(server), data);
+    }
+
     private SSHClient getClient(Machine machine) throws IOException {
         SSHClient sshClient = new SSHClient();
         sshClient.connect(machine.getHostname());
@@ -159,5 +167,18 @@ public class SSHService {
 
     private String getFilePath(Machine machine, Game game, String path){
         return getScriptRootPath(machine, game) + path;
+    }
+
+    private String getConfigFilePath(Server server){
+        Game game = server.getGame();
+        Machine machine = server.getMachine();
+        return getHomePath(machine) + game.getConfigRootPath() + game.getConfigFileName();
+    }
+
+    private String getInstallParams(Server server){
+        return " -ip " +
+                server.getMachine().getHostname() +
+                " -port " +
+                server.getPort();
     }
 }
