@@ -1,6 +1,9 @@
 package com.folcike.gamepanelf.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,36 +15,37 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(indexes = {@Index(columnList = "username", unique = true), @Index(columnList = "email", unique = true)})
-public class User {
+public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String name;
 
-    private String firstname;
+    private String logo;
 
-    private String lastname;
+    private String installScriptPath;
 
-    private String email;
+    private String startScriptPath;
 
-    private String role;
+    private String stopScriptPath;
 
-    private String password;
+    private String configRootPath;
+    
+    private String configFileName;
 
     @OneToMany(
-            mappedBy = "user",
+            mappedBy = "game",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     private List<Server> servers = new ArrayList<>();
 
     @OneToMany(
-            mappedBy = "user",
+            mappedBy = "game",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Machine> machines = new ArrayList<>();
+    private List<ServerConfigField> serverConfigFields = new ArrayList<>();
 }
