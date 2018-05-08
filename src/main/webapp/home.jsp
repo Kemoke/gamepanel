@@ -85,14 +85,14 @@
             <div class="col-md-6">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://images2.alphacoders.com/617/617634.jpg" alt="First slide">
+                        <div class="carousel-item active" style="max-height: 519px">
+                            <img class="d-block w-100" src="https://images2.alphacoders.com/617/617634.jpg" alt="First slide" >
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images4.alphacoders.com/823/thumb-1920-82368.jpg" alt="Second slide">
+                        <div class="carousel-item" style="max-height: 519px">
+                            <img class="d-block w-100" src="https://images4.alphacoders.com/823/thumb-1920-82368.jpg" alt="Second slide" >>
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images7.alphacoders.com/587/thumb-1920-587593.png" alt="Third slide">
+                        <div class="carousel-item" style="max-height: 519px">
+                            <img class="d-block w-100" src="https://images7.alphacoders.com/587/thumb-1920-587593.png" alt="Third slide" >>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
