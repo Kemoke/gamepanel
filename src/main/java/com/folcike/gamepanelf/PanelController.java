@@ -19,4 +19,5 @@ public class PanelController {
     public String panel(Model model, RedirectAttributes redirect) {
         return "panel";
     }
+
 }
