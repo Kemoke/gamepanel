@@ -43,7 +43,7 @@ public class LoginController {
                 return "login";
             }
             session.setAttribute("user", user);
-            return "redirect:/";
+            return "redirect:/panel";
         } catch (Exception e){
             model.addAttribute("error", "User not found");
             return "login";

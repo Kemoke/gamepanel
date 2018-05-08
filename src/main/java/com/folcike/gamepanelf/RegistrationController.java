@@ -43,7 +43,7 @@ public class RegistrationController {
                 ex.printStackTrace();
             }
             userRepository.save(user);
-            return "redirect:/";
+            return "redirect:/login";
         }
     }
 
