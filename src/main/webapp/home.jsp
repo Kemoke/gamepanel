@@ -22,7 +22,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="#">
-            <i class="fa fa-gamepad" aria-hidden="false" style="font-size:24px;color:white"></i>
+            <i class="fa fa-gamepad" aria-hidden="false" style="font-size:24px;color:white; padding-right:10px"></i>
         </a>
         <a class="navbar-brand" href="#">Game Panel</a>
 
