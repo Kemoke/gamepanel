@@ -57,10 +57,36 @@
         <p class="card-text">
             Server1
         </p>
-        <a href="#" class="btn btn-primary">Add server</a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Add server</button>
+              </div>
+            </div>
+          </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add new server</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                  <input type="text" class="form-control" path="servername" placeholder="Server Name"/>
+                  <input type="text" class="form-control" path="hostname" placeholder="Hostname"/>
+                  <input type="text" class="form-control" path="username" placeholder="User Name"/>
+                  <input type="password" class="form-control" path="password" placeholder="Password"/>
+                  <input type="text" class="form-control" path="rootdir" placeholder="Root Dir"/>
+                  <input type="text" class="form-control" path="command" placeholder="Start Command"/>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
   <div class="col-sm-8">
     <div class="card">
       <div class="card-body">
