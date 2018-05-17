@@ -40,6 +40,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             }
             return true;
         }
+        System.out.println(path);
         for (String excludedUrl : excludedUrls) {
             if ((excludedUrl.charAt(excludedUrl.length()-1) == '*' && path.startsWith(excludedUrl.substring(0, excludedUrl.length()-2))) || path.equals(excludedUrl))
                 return true;
