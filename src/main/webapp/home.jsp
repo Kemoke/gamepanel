@@ -25,6 +25,13 @@
             <i class="fa fa-gamepad" aria-hidden="false" style="font-size:24px;color:white; padding-right:10px"></i>
         </a>
         <a class="navbar-brand" href="#">Game Panel</a>
+    <div class="container-fluid ">
+
+        <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a href="#">
+                <i class="fa fa-gamepad p-md-2  " aria-hidden="false" style="font-size:24px;color:white"></i>
+            </a>
+            <a class="navbar-brand" href="#">Game Panel</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,26 +39,25 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item active dropdown">
+                    <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Games</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Game#1</a>
-                        <a class="dropdown-item" href="#">Game#2</a>
-                        <a class="dropdown-item" href="#">Game#3</a>
-                    </div>
-                </li>
-                 <li class="nav-item active">
-                     <a class="nav-link" href="#">Login</a>
-                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <button class="btn-sm btn-warning">Join Us</button>
-                    </a>
-                </li>
-
-
-            </ul>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Game#1</a>
+                            <a class="dropdown-item" href="#">Game#2</a>
+                            <a class="dropdown-item" href="#">Game#3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                            <button class="btn-sm btn-warning">Join Us</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
