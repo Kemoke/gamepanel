@@ -188,8 +188,6 @@
 
     </footer>
     <!--/.Footer-->
-
-
 </main>
 
 
