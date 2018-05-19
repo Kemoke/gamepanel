@@ -36,9 +36,10 @@
         <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a href="#">
                 <i class="fa fa-gamepad p-md-2  " aria-hidden="false" style="font-size:24px;color:white"></i>
+
             </a>
             <a class="navbar-brand" href="#">Game Panel</a>
-
+            <div class="container-fluid ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,6 +85,7 @@
                 <h1 align="center">Web Game Panel</h1>
 
                 <p align="center">Intuitive and User Friendly</p>
+
         </div>
         </div>
         <br>
@@ -143,13 +145,17 @@
                     <div class="card align-items-center pt-md-2">
                         <h4 class="card-title">User Friendly</h4>
                         <p align="center">Whether you are total n00b or a server guru, you would still be able to leverage from the experience that we provide.
+
                         Unless you're curious to learn about what's happening under the hood, there is no hindrance to your involvement.</p>
+
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card align-items-center pt-md-2">
                         <h4 class="card-title">Monitoring</h4>
+
                             <p align="center">Additionally, we offer an awesome monitoring platform as well.<br>Whether you'd like to follow a pre-specified protocol or just want to check the health or statistical status of your server, this platform has got you covered ;)</p>
+
 
                     </div>
                 </div>
