@@ -2,6 +2,11 @@
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+<link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,25 +15,67 @@
     <div clas="navbar navbar-default">
         <div clas="container-fluid">
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Brand</a>
-                <a href="/servers">Servers</a>
-                <a href="/logout/"> Logout</a>
-            </div>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+<body class="container-fluid">
+
+<header>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="navbar-header navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-keyboard-o" style="font-size:24px;color:white; padding-right:10px"></i>Game Panel
+            </a>
+        </div>
+
+        <ul class=" navbar-nav ml-autot">
+            <li class="nav-item">
+                <a href="/adminservers">Servers</a></li>
+            <li class="nav-item ml-md-3 active">
+                <a href="/panel">Machines</a></li>
+        </ul>
+
+            <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto   ">
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="/logout/">
+                            <button type="button" class="btn btn-sm btn-warning">Logout</button></a>
+                    </li>
                 </ul>
             </div>
-        </div>
+        <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+        </div-->
+            </div>
+        </nav>
     </div>
 
-    <h1>Panel</h1>
+</header>
 
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Add machine
-    </button>
+<main class="mt-md-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 align="center">Panel</h1>
+        </div>
+    </div>
+    <div class="row mt-md-auto">
+        <div class="col-md-12" align="center">
+            <button type="button" class="btn btn-primary" ata-toggle="modal" data-target="#exampleModal">
+                Add machine
+            </button>
+        </div>
+    </div>
+</main>
+
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
