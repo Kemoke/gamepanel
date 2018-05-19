@@ -3,11 +3,11 @@
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            font-family: "Courier New", Courier, monospace;
-        }
-    </style>
+   <style>
+       body {
+           font-family: "Courier New", Courier, monospace;
+       }
+   </style>
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 
@@ -26,45 +26,46 @@
 
 <header>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a>
-                <i class="fa fa-gamepad" aria-hidden="false" style="font-size:24px;color:white; padding-right:10px"></i>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a>
+            <i class="fa fa-gamepad" aria-hidden="false" style="font-size:24px;color:white; padding-right:10px"></i>
+        </a>
+        <a class="navbar-brand" href="#">Game Panel</a>
+    <div class="container-fluid ">
+
+        <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a href="#">
+                <i class="fa fa-gamepad p-md-2  " aria-hidden="false" style="font-size:24px;color:white"></i>
+
             </a>
             <a class="navbar-brand" href="#">Game Panel</a>
             <div class="container-fluid ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                    <a href="#">
-                        <i class="fa fa-gamepad p-md-2  " aria-hidden="false" style="font-size:24px;color:white"></i>
-                    </a>
-                    <a class="navbar-brand" href="#">Game Panel</a>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Games</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Game#1</a>
-                                    <a class="dropdown-item" href="#">Game#2</a>
-                                    <a class="dropdown-item" href="#">Game#3</a>
-                                </div>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/login">Login</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/registration/">
-                                    <button class="btn-sm btn-warning">Join Us</button>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Games</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Game#1</a>
+                            <a class="dropdown-item" href="#">Game#2</a>
+                            <a class="dropdown-item" href="#">Game#3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/registration/">
+                            <button class="btn-sm btn-warning">Join Us</button>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
         </nav>
     </div>
 </header>
@@ -84,18 +85,19 @@
                 <h1 align="center">Web Game Panel</h1>
 
                 <p align="center">Intuitive and User Friendly</p>
-            </div>
+
+        </div>
         </div>
         <br>
         <div class="row">
             <div class="col-md-12">
                 <p align="center">
                     <a href="/registration/">
-                        <button class="btn-lg btn-warning">Get Started</button>
+                    <button class="btn-lg btn-warning">Get Started</button>
                     </a>
                 </p>
             </div>
-        </div>
+            </div>
         <br>
         <div class="row" >
             <div class="col-md-6">
@@ -143,13 +145,17 @@
                     <div class="card align-items-center pt-md-2">
                         <h4 class="card-title">User Friendly</h4>
                         <p align="center">Whether you are total n00b or a server guru, you would still be able to leverage from the experience that we provide.
-                            Unless you're curious to learn about what's happening under the hood, there is no hindrance to your involvement.</p>
+
+                        Unless you're curious to learn about what's happening under the hood, there is no hindrance to your involvement.</p>
+
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card align-items-center pt-md-2">
                         <h4 class="card-title">Monitoring</h4>
-                        <p align="center">Additionally, we offer an awesome monitoring platform as well.<br>Whether you'd like to follow a pre-specified protocol or just want to check the health or statistical status of your server, this platform has got you covered ;)</p>
+
+                            <p align="center">Additionally, we offer an awesome monitoring platform as well.<br>Whether you'd like to follow a pre-specified protocol or just want to check the health or statistical status of your server, this platform has got you covered ;)</p>
+
 
                     </div>
                 </div>
