@@ -182,8 +182,6 @@
 
     </footer>
     <!--/.Footer-->
-
-
 </main>
 
 
