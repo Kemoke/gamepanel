@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
@@ -33,8 +34,11 @@
 
          <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item active ">
+            <li class="nav-item  ">
                 <a class="nav-link" href="/adminservers/">Servers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/machine">Machines</a>
             </li>
          </ul>
 
@@ -72,13 +76,31 @@
               </button>
             </div>
             <div class="modal-body">
-                  <input type="text" class="form-control" path="servername" placeholder="Server Name"/>
-                  <input type="text" class="form-control" path="hostname" placeholder="Hostname"/>
-                  <input type="text" class="form-control" path="username" placeholder="User Name"/>
-                  <input type="password" class="form-control" path="password" placeholder="Password"/>
-                  <input type="text" class="form-control" path="rootdir" placeholder="Root Dir"/>
-                  <input type="text" class="form-control" path="command" placeholder="Start Command"/>
+              <form:form method="POST" action="/admin/" modelAttribute="server">
+                   <table>
 
+                      <tr>
+                          <td><form:input type="text" class="form-control" placeholder="User Name"  path="user"/></td>
+                      </tr>
+                      <tr>
+                          <td><form:input type="text" class="form-control" placeholder="Server Name" path="name"/></td>
+                      </tr>
+                      <tr>
+                          <td><form:input type="text" class="form-control" placeholder="Server ID"  path="id"/></td>
+                      </tr>
+                      <tr>
+                          <td><form:input type="text" class="form-control" placeholder="Machine"  path="machine"/></td>
+                      </tr>
+                      <tr>
+                          <td><form:input type="text" class="form-control" placeholder="Port"  path="port"/></td>
+                      </tr>
+                      <tr>
+                           <td><form:input type="text" class="form-control" placeholder="Game"  path="game"/></td>
+                      </tr>
+
+
+                  </table>
+              </form:form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

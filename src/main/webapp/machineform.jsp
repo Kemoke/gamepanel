@@ -33,10 +33,10 @@
 
          <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item active ">
+            <li class="nav-item ">
                 <a class="nav-link" href="/adminservers">Servers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active ">
                 <a class="nav-link" href="/machine">Machines</a>
             </li>
          </ul>
@@ -54,13 +54,13 @@
   <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        Server List
+        Machine List
       </div>
       <div class="card-body" style="background-color: rgba(255, 255, 255, 0.7);">
         <p class="card-text">
-            Server1
+            Machine 1
         </p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Add server</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Add machine</button>
       </div>
     </div>
   </div>
@@ -74,32 +74,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-         <div class="modal-body">
-          <form:form method="POST" action="/addSever" modelAttribute="server">
-               <table>
-
-                  <tr>
-                      <td><form:input type="text" class="form-control" placeholder="User Name"  path="user"/></td>
-                  </tr>
-                  <tr>
-                      <td><form:input type="text" class="form-control" placeholder="Server Name" path="name"/></td>
-                  </tr>
-                  <tr>
-                      <td><form:input type="text" class="form-control" placeholder="Server ID"  path="id"/></td>
-                  </tr>
-                  <tr>
-                      <td><form:input type="text" class="form-control" placeholder="Machine"  path="machine"/></td>
-                  </tr>
-                  <tr>
-                      <td><form:input type="text" class="form-control" placeholder="Port"  path="port"/></td>
-                  </tr>
-                  <tr>
-                       <td><form:input type="text" class="form-control" placeholder="Game"  path="game"/></td>
-                  </tr>
-
-
-              </table>
-          </form:form>
+        <div class="modal-body">
+          ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -129,7 +105,7 @@
         <hr>
         <div class="row">
             <div class="col">
-                <a href="/admin" class="card-link">Server1</a>
+                <a href="/admin" class="card-link">Machine 1</a>
             </div>
             <div class="col-center">
                 <button type="button" class="btn btn-success">Start</button>
