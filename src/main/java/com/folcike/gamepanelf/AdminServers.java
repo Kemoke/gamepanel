@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
-
-
+import java.sql.SQLException;
 
 
 @Controller
@@ -30,20 +28,22 @@ public class AdminServers {
         this.serverRepo = serverRepo;
     }
 
-    @GetMapping("/")
-    public String adminservers(Model model, RedirectAttributes redirect){
-        model.addAttribute("server",new Server());
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String adminservers(Model model, RedirectAttributes redirect) {
+        Server serverModel = new Server();
 
+        serverModel.setName("Melika");
+        model.addAttribute("server", new Server());
+        model.addAttribute("servers", serverRepo.findAll());
         return "adminservers";
     }
 
-    @PostMapping("/")
-    public String serverRequest(Model model, @ModelAttribute ("server") Server server){
-
-            serverRepo.save(server);
-            return "adminservers";
-        }
-
+    @PostMapping("/addServer")
+    public String addServer(@ModelAttribute("server") Server server, Model model) throws ClassNotFoundException, SQLException {
+        System.out.println(server.getName() + " " + server.getPort());
+        serverRepo.save(server);
+        return "redirect:/admin";
+    }
 
 
     }

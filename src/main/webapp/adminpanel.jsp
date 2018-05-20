@@ -3,7 +3,9 @@
 <html lang="en">
 
 <head>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
@@ -34,11 +36,14 @@
 
          <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item  ">
+            <li class="nav-item">
                 <a class="nav-link" href="/adminservers/">Servers</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/machine">Machines</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/game">Games</a>
             </li>
          </ul>
 
@@ -59,7 +64,7 @@
       </div>
       <div class="card-body" style="background-color: rgba(255, 255, 255, 0.7);">
         <p class="card-text">
-            Server1
+            ${server.name}
         </p>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Add server</button>
               </div>
