@@ -3,16 +3,10 @@
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            font-family: "Courier New", Courier, monospace;
-        }
-    </style>
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 
-
-    <link href="css/style.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta charset="utf-8">
