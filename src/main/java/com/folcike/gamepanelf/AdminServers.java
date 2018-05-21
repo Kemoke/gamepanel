@@ -2,6 +2,8 @@ package com.folcike.gamepanelf;
 
 
 import com.folcike.gamepanelf.model.Server;
+import com.folcike.gamepanelf.repository.GameRepo;
+import com.folcike.gamepanelf.repository.MachineRepository;
 import com.folcike.gamepanelf.repository.ServerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -22,19 +24,22 @@ import java.sql.SQLException;
 public class AdminServers {
 
     private ServerRepository serverRepo;
+    private MachineRepository machineRepo;
+    private GameRepo gameRepo;
 
     @Autowired
-    public AdminServers(ServerRepository serverRepo){
+    public AdminServers(ServerRepository serverRepo, MachineRepository machineRepo, GameRepo gameRepo){
         this.serverRepo = serverRepo;
+        this.machineRepo = machineRepo;
+        this.gameRepo = gameRepo;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String adminservers(Model model, RedirectAttributes redirect) {
-        Server serverModel = new Server();
-
-        serverModel.setName("Melika");
         model.addAttribute("server", new Server());
         model.addAttribute("servers", serverRepo.findAll());
+        model.addAttribute("machines", machineRepo.findAll());
+        model.addAttribute("games", gameRepo.findAll());
         return "adminservers";
     }
 

@@ -12,7 +12,7 @@
 
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Brand</a>
-            <a href="/servers">Servers</a>
+            <a href="/adminservers">Servers</a>
             <a href="/logout/"> Logout</a>
         </div>
 
@@ -86,7 +86,6 @@
     </c:forEach>
 </table>
 
-<textarea id="machine_list" rows="20" cols="100" readonly>${machines}</textarea>
 
 <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
 <script src="webjars/popper.js/1.12.9-1/popper.min.js"></script>

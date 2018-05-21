@@ -96,11 +96,11 @@
               </div>
               <div class="form-group">
                   <form:label path="machine"><span class="far fa-newspaper"></span> Machine </form:label>
-                  <form:input type="text" class="form-control" id="machine" path="machine" placeholder="Enter the machine"></form:input>
+                  <form:select path="machine" id="machineSelect" items="${machines}" itemValue="id" itemLabel="name"></form:select>
               </div>
               <div class="form-group">
                 <form:label path="game"><span class="far fa-newspaper"></span> Game </form:label>
-                <form:input type="text" class="form-control" id="game" path="game" placeholder="Enter the game"></form:input>
+                  <form:select path="game" id="gameSelect" items="${games}" itemValue="id" itemLabel="name"></form:select>
             </div>
 
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
