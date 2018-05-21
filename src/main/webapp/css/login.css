@@ -6,10 +6,20 @@ body {
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
+    background-color: rgba(0,0,0,0.5);
 }
 button {
         margin: 10px 10px 10px 10px
     }
-p{
+p, h3, label{
     color:white;
+}
+.container{
+     padding:10px 160px;
+     margin-top:10vh;
+     background-color: rgba(0,0,0,0.5);
+     -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+     -moz-box-shadow:-1px 4px 26px 11px rgba(0,0,0,0.75);
+     box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+
 }

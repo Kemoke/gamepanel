@@ -19,7 +19,9 @@
 <main role="main" class="container">
     <%--@elvariable id="user" type="com.folcike.gamepanelf.model.User"--%>
     <%--@elvariable id="error" type="java.lang.String"--%>
-    <form:form action="/login/" method='POST' cssClass="card" modelAttribute="user">
+    <h3> Welcome Gamer! </h3>
+
+    <form:form action="/login/" method='POST' modelAttribute="user">
         <div class="alert alert-danger">${error}</div>
         <div class="card-body">
             <div class="row form-group">
