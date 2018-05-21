@@ -68,10 +68,6 @@
                     <%--@elvariable id="machine" type="com.folcike.gamepanelf.model.Machine"--%>
                     <form:form action="/panel/insertMachine" method="post" modelAttribute="machine" >
                         <div class="form-group">
-                            <form:label path="id"><span class="fas fa-at"></span> ID </form:label>
-                            <form:input class="form-control" id="id" path="id" type="text" placeholder="Enter ID"></form:input>
-                        </div>
-                        <div class="form-group">
                             <form:label path="username"><span class="fab fa-napster"></span> Username </form:label>
                             <form:input class="form-control" id="username" path="username" type="text" placeholder="Enter username"></form:input>
                         </div>
