@@ -18,7 +18,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <title>Admin Page</title>
+    <title>Games</title>
 </head>
 
 <body>
@@ -37,13 +37,13 @@
 
          <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item active ">
+            <li class="nav-item">
                 <a class="nav-link" href="/adminservers">Servers</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/panel">Machines</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/game">Games</a>
             </li>
          </ul>
@@ -61,47 +61,77 @@
   <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        Server List
+        Game List
       </div>
       <div class="card-body" style="background-color: rgba(255, 255, 255, 0.7);">
         <p class="card-text">
-            ${server.name}
+            ${game.name}
         </p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Add server</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gameForm">Add game</button>
       </div>
     </div>
   </div>
   <!-- Modal -->
-  <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="gameForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">New Server</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">New Game</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
          <div class="modal-body">
           <%--@elvariable id="server" type="com.folcike.gamepanelf.model.Server"--%>
-          <form:form action="/adminservers/addServer" method="post" modelAttribute="server" >
+          <form:form action="/game/addGame" method="post" modelAttribute="game" >
 
 
               <div class="form-group">
-                  <form:label path="name"><span class="fas fa-key"></span> Server Name </form:label>
+                  <form:label path="name"><span class="fas fa-key"></span> Game Name </form:label>
                   <form:input type="text" class="form-control" id="name" path="name" placeholder="Enter the name"></form:input>
               </div>
               <div class="form-group">
-                  <form:label path="port"><span class="fas fa-home"></span> Port </form:label>
-                  <form:input type="text" class="form-control" id="port" path="port" placeholder="Enter the port"></form:input>
+                  <form:label path="id"><span class="fas fa-home"></span> ID </form:label>
+                  <form:input type="text" class="form-control" id="id" path="id" placeholder="Enter the id"></form:input>
               </div>
               <div class="form-group">
-                  <form:label path="machine"><span class="far fa-newspaper"></span> Machine </form:label>
-                  <form:select path="machine" id="machineSelect" items="${machines}" itemValue="id" itemLabel="name"></form:select>
+                  <form:label path="logo"><span class="far fa-newspaper"></span> Logo </form:label>
+                  <form:input type="text" class="form-control" id="logo" path="logo" placeholder="Logo"></form:input>
               </div>
               <div class="form-group">
-                <form:label path="game"><span class="far fa-newspaper"></span> Game </form:label>
-                  <form:select path="game" id="gameSelect" items="${games}" itemValue="id" itemLabel="name"></form:select>
+                <form:label path="installScriptPath"><span class="far fa-newspaper"></span> Path </form:label>
+                <form:input type="text" class="form-control" id="installScriptPath" path="installScriptPath" placeholder="Script Path"></form:input>
             </div>
+            <div class="form-group">
+                  <form:label path="startScriptPath"><span class="far fa-newspaper"></span> Start Path </form:label>
+                  <form:input type="text" class="form-control" id="startScriptPath" path="startScriptPath" placeholder="Start Path"></form:input>
+              </div>
+              <div class="form-group">
+                  <form:label path="stopScriptPath"><span class="far fa-newspaper"></span> Stop Path </form:label>
+                  <form:input type="text" class="form-control" id="stopScriptPath" path="stopScriptPath" placeholder="Stop Path"></form:input>
+              </div>
+              <div class="form-group">
+                    <form:label path="scriptRootPath"><span class="far fa-newspaper"></span> Root Path </form:label>
+                    <form:input type="text" class="form-control" id="scriptRootPath" path="scriptRootPath" placeholder="Root Path"></form:input>
+            </div>
+               <div class="form-group">
+                    <form:label path="configRootPath"><span class="far fa-newspaper"></span> Root Path configuration </form:label>
+                    <form:input type="text" class="form-control" id="configRootPath" path="configRootPath" placeholder="Root Path Configuration"></form:input>
+               </div>
+               <div class="form-group">
+                   <form:label path="configFileName"><span class="far fa-newspaper"></span>  File Name </form:label>
+                   <form:input type="text" class="form-control" id="configFileName" path="configFileName" placeholder="File Name"></form:input>
+              </div>
+              <div class="form-group">
+                     <form:label path="servers"><span class="far fa-newspaper"></span> Server </form:label>
+                     <form:input type="text" class="form-control" id="servers" path="servers" placeholder="Server"></form:input>
+                </div>
+                <div class="form-group">
+                       <form:label path="serverConfigFields"><span class="far fa-newspaper"></span> Server Configuration Fields </form:label>
+                       <form:input type="text" class="form-control" id="serverConfigFields" path="serverConfigFields" placeholder="Servers Fields"></form:input>
+                </div>
+
+
 
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -117,24 +147,20 @@
       <div class="card-body">
       <div class="card border-secondary w-80" style="max-width: 54rem;">
         <div class="card-body">
-        <h5 class="card-title">Server List</h5>
+        <h5 class="card-title">Game Details List</h5>
 
         <div class="row">
             <div class="col">
-                <a href="/admin" class="card-link">
+                <a href="/game" class="card-link">
                  <table>
-                    <c:forEach items="${servers}" var="server">
+                    <c:forEach items="${games}" var="game">
 
                             <tr>
-                                <td>${server.name}</td>
-                                <td>${server.port}</td>
-                                <td>${server.game}</td>
-                                <td><button type="button" class="btn btn-success">Start</button></td>
-                                <td><button type="button" class="btn btn-info">Stop</button></td>
+                                <td>${game.name}</td>
+                                <td><button type="button" class="btn btn-success">Edit</button></td>
                                 <td><button type="button" class="btn btn-danger">Delete</button></td>
                             </tr>
                             <hr>
-
                     </c:forEach>
                 </table>
                 </a>

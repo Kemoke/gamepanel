@@ -15,7 +15,7 @@ import java.io.IOException;
 public class AuthInterceptor implements HandlerInterceptor {
 
     private static String[] excludedUrls = new String[]{
-            "/login/", "/registration/", "/webjars*", "/css*", "/img*", "/error", "/", "/admin/", "/adminservers/"
+            "/login/", "/registration/", "/webjars*", "/css*", "/img*", "/error", "/", "/admin/", "/adminservers/", "/machine/",
     };
     private final HttpSession session;
 
