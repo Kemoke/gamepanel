@@ -22,7 +22,9 @@
     <h3> Welcome Gamer! </h3>
 
     <form:form action="/login/" method='POST' modelAttribute="user">
-        <div class="alert alert-danger">${error}</div>
+        <c:if test="${not empty error}">
+            <div class="alert alert-danger">${error}</div>
+        </c:if>
         <div class="card-body">
             <div class="row form-group">
                 <div class="col-md-4"><form:label path="username">Username</form:label></div>

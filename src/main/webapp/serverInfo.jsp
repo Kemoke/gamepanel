@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/login">Log out</a>
+                    <a class="nav-link" href="/logout/">Log out</a>
                 </li>
             </ul>
         </div>

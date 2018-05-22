@@ -78,8 +78,9 @@ public class AdminServers {
     }
 
     @PostMapping("/addServer")
-    public String addServer(@ModelAttribute("server") Server server, Model model) throws ClassNotFoundException, SQLException {
+    public String addServer(@ModelAttribute("server") Server server, Model model) throws IOException {
         serverRepo.save(server);
+        sshService.runInstallScript(server);
         return "redirect:/admin";
     }
 
@@ -91,9 +92,6 @@ public class AdminServers {
         }
         Server server = serverReq.get();
         switch (type){
-            case "install":
-                sshService.runInstallScript(server);
-                break;
             case "start":
                 sshService.runStartScript(server);
                 break;

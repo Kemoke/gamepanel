@@ -42,6 +42,7 @@ public class LoginController {
                 model.addAttribute("error", "Invalid password");
                 return "login";
             }
+            model.addAttribute("error", "");
             session.setAttribute("user", user);
             return "redirect:/panel";
         } catch (Exception e){
