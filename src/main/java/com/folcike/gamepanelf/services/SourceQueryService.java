@@ -44,7 +44,7 @@ public final class SourceQueryService {
 
     public SourceServer getServerInfo(Server server) throws InterruptedException, ExecutionException, TimeoutException {
         SourceQueryClient client = new SourceQueryClient();
-        return client.getServerInfo(getServerAddress(server)).get(2, TimeUnit.SECONDS);
+        return client.getServerInfo(getServerAddress(server)).get(5, TimeUnit.SECONDS);
     }
 
     public String sendRconCommand(Server server, String command){
