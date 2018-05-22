@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(indexes = {
@@ -30,6 +31,8 @@ public class Server {
 
     private int port;
 
+    private boolean isSetup = false;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "game_id")
     private Game game;
@@ -37,4 +40,7 @@ public class Server {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<ServerConfigValue> serverConfig;
 }

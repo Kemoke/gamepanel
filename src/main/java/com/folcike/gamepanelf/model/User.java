@@ -36,12 +36,12 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Server> servers = new ArrayList<>();
+    private List<Server> servers;
 
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Machine> machines = new ArrayList<>();
+    private List<Machine> machines;
 }

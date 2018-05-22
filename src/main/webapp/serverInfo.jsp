@@ -1,15 +1,16 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <title>Server Info</title>
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/admin.css">
@@ -17,14 +18,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <title>Admin Page</title>
 </head>
-
 <body>
-
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="#">
@@ -38,14 +33,13 @@
         </button>
 
         <ul class="navbar-nav ml-auto">
-
             <li class="nav-item">
                 <a class="nav-link" href="/game">Games</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/panel">Machines</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active ">
                 <a class="nav-link" href="/adminservers">Servers</a>
             </li>
         </ul>
@@ -59,6 +53,7 @@
         </div>
     </nav>
 </header>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
@@ -125,74 +120,59 @@
         <div class="col-sm-8">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Server List</h5>
-                    <div class="row">
-                        <div class="col">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>Server Ip</th>
-                                    <th>Game</th>
-                                    <th>Install Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <%--@elvariable id="servers" type="java.util.List"--%>
-                                <c:forEach items="${servers}" var="server">
-                                    <tbody>
-                                    <tr>
-                                        <td><a href="/adminservers/${server.id}/">${server.name}</a></td>
-                                        <td>${server.machine.hostname}:${server.port}</td>
-                                        <td><img src="${server.game.logo}" alt="logo" height="30"> ${server.game.name}</td>
-                                        <td>
-                                            <c:choose>
-                                                <c:when test="${server.setup}">
-                                                    <span class="badge badge-warning">Not Setup</span>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <span class="badge badge-success">Setup</span>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </td>
-                                        <td width="0">
-                                            <a href="/adminservers/${server.id}/action?type=start" class="btn btn-success">Start</a>
-                                            <a href="/adminservers/${server.id}/action?type=stop" class="btn btn-info">Stop</a>
-                                            <a href="/adminservers/${server.id}/action?type=restart" class="btn btn-danger">Restart</a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </c:forEach>
-                            </table>
-                        </div>
-                    </div>
+                    <h5 class="card-title">Server Info</h5>
+                    <c:choose>
+                        <%--@elvariable id="error" type="java.lang.String"--%>
+                        <c:when test='${empty error}'>
+                            <%--@elvariable id="serverInfo" type="com.ibasco.agql.protocols.valve.source.query.pojos.SourceServer"--%>
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>Hostname</strong>
+                                </div>
+                                <div class="col-6">
+                                        ${serverInfo.name}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>Map</strong>
+                                </div>
+                                <div class="col-6">
+                                        ${serverInfo.mapName}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>Players</strong>
+                                </div>
+                                <div class="col-6">
+                                        ${serverInfo.numOfPlayers}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>Max Players</strong>
+                                </div>
+                                <div class="col-6">
+                                        ${serverInfo.maxPlayers}
+                                </div>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="alert alert-danger">
+                                    ${error}
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
-<script src="webjars/popper.js/1.12.9-1/popper.min.js"></script>
+<script src="/webjars/popper.js/1.12.9-1/umd/popper.min.js"></script>
 <script src="/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
 
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
-
-<script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
-</script>
-
 </body>
-
 </html>

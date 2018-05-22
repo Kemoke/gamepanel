@@ -10,19 +10,21 @@ import net.schmizz.sshj.sftp.OpenMode;
 import net.schmizz.sshj.sftp.RemoteFile;
 import net.schmizz.sshj.sftp.RemoteResourceInfo;
 import net.schmizz.sshj.sftp.SFTPClient;
+import net.schmizz.sshj.transport.verification.PromiscuousVerifier;
 import net.schmizz.sshj.xfer.FileSystemFile;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+import sun.nio.ch.IOUtil;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.*;
 
-public class SSHService {
-
-    @Bean
-    public static SSHService provideSSHService() {
-        return new SSHService();
-    }
+@Service
+public final class SSHService {
 
     public void runInstallScript(Server server) throws IOException {
         Machine machine = server.getMachine();
@@ -52,10 +54,14 @@ public class SSHService {
         SSHClient sshClient = getClient(machine);
         try {
             Session session = sshClient.startSession();
-            session.exec(runInBash(getStartScriptPath(machine, game)));
+            session.exec(runInBash(getStartScriptPath(machine, game))).join();
         } finally {
             sshClient.disconnect();
         }
+    }
+
+    private String runInBash(String cmd){
+        return "bash " + cmd;
     }
 
     public void runStopScript(Server server) throws IOException {
@@ -133,14 +139,11 @@ public class SSHService {
 
     private SSHClient getClient(Machine machine) throws IOException {
         SSHClient sshClient = new SSHClient();
+        sshClient.addHostKeyVerifier(new PromiscuousVerifier());
         sshClient.connect(machine.getHostname());
         sshClient.authPassword(machine.getUsername(), machine.getPassword());
         sshClient.useCompression();
         return sshClient;
-    }
-
-    private String runInBash(String scriptPath){
-        return "bash " + scriptPath;
     }
 
     private String getHomePath(Machine machine) {
@@ -176,9 +179,10 @@ public class SSHService {
     }
 
     private String getInstallParams(Server server){
-        return " -ip " +
-                server.getMachine().getHostname() +
-                " -port " +
-                server.getPort();
+        try {
+            return server.getId() + " " + InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -42,12 +42,12 @@ public class Game {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Server> servers = new ArrayList<>();
+    private List<Server> servers;
 
     @OneToMany(
             mappedBy = "game",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<ServerConfigField> serverConfigFields = new ArrayList<>();
+    private List<ServerConfigField> serverConfigFields;
 }

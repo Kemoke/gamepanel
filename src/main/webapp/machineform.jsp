@@ -128,17 +128,6 @@
 <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
 <script src="webjars/popper.js/1.12.9-1/popper.min.js"></script>
 <script src="/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
-
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
-
 </body>
 
 </html>

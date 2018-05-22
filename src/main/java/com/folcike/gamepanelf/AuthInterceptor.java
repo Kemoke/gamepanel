@@ -1,6 +1,5 @@
 package com.folcike.gamepanelf;
 
-import com.folcike.gamepanelf.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +14,7 @@ import java.io.IOException;
 public class AuthInterceptor implements HandlerInterceptor {
 
     private static String[] excludedUrls = new String[]{
-            "/login/", "/registration/", "/webjars*", "/css*", "/img*", "/error", "/", "/admin/", "/adminservers/", "/machine/",
+            "/login/", "/registration/", "/webjars*", "/css*", "/img*", "/error", "/",
     };
     private final HttpSession session;
 

@@ -35,7 +35,8 @@ public class Machine {
     @OneToMany(
             mappedBy = "machine",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
     )
-    private List<Server> servers = new ArrayList<>();
+    private List<Server> servers;
 }

@@ -22,11 +22,13 @@ public class ServerConfigValue {
 
     private String value;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    private Long server_id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "server_config_field_id")
     private ServerConfigField configField;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "server_id")
+    @JoinColumn(name = "server_id", insertable = false, updatable = false)
     private Server server;
 }
